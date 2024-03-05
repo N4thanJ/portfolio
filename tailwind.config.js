@@ -14,10 +14,11 @@ module.exports = {
       },
     },
     colors: {
-      'midnight': '#231651',
-      'wavyblue': '#4DCCBD',
-      'coralblue': '#D6FFF6',
-      'white': '#fff'
+      'tertiair': '#f77f00',
+      'secondary': '#003049',
+      'primary': '#D6FFF6',
+      'white': '#fff',
+      'black': '#000',
     },
   },
   plugins: [],
