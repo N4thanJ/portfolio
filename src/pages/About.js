@@ -1,9 +1,13 @@
+import Journey from "./Journey";
+import ProjectCards from "./ProjectCards";
+
 function About() {
     return (
-        <article>
-            <p>Hello Monkey</p>
-        </article>
+        <>
+            <Journey />
+            <ProjectCards />
+        </>
     )
-}
+}   
 
 export default About;
