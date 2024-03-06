@@ -7,8 +7,8 @@ config.autoAddCss = false
 
 function ProjectCards() {
     return (
-        <article className="flex flex-wrap justify-evenly text-center py-20">
-            <div className="w-[250px] py-10">
+        <article className="flex flex-wrap justify-center gap-16 text-center py-20">
+            <div className="w-[275px] p-8 transition-all hover:shadow-md duration-300 hover:rounded-3xl">
                 <div className="text-xs">
                     <FontAwesomeIcon icon={faMobileScreenButton} size="5x"/>
                 </div>
@@ -19,7 +19,7 @@ function ProjectCards() {
                     </p>
                 </div>
             </div>
-            <div className="w-[250px] py-10 ">
+            <div className="w-[275px] p-8 transition-all hover:shadow-md duration-300 hover:rounded-3xl">
                 <div className="text-xs">
                     <FontAwesomeIcon icon={faMagnifyingGlass} size="5x"/>
                 </div>
@@ -30,7 +30,7 @@ function ProjectCards() {
                     </p>
                 </div>
             </div>
-            <div className="w-[250px] py-10">
+            <div className="w-[275px] p-8 transition-all hover:shadow-md duration-300 hover:rounded-3xl">
                 <div className="text-xs">
                     <FontAwesomeIcon icon={faLongArrowDown} size="5x"/>
                 </div>

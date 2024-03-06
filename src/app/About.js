@@ -1,5 +1,5 @@
-import Journey from "./Journey";
-import ProjectCards from "./ProjectCards";
+import Journey from "../pages/Journey";
+import ProjectCards from "../pages/ProjectCards";
 
 function About() {
     return (

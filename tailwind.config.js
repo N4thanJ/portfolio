@@ -19,7 +19,9 @@ module.exports = {
       'primary': '#D6FFF6',
       'white': '#fff',
       'black': '#000',
-      'grey': '#A9A9A9'
+      'grey': '#A9A9A9',
+      'seablue': '#002030',
+      'blue': '#0000ff',
     },
   },
   plugins: [],

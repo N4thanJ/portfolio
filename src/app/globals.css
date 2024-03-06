@@ -31,3 +31,15 @@ body {
   background-repeat: no-repeat;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+footer .icons {
+  gap: 1rem;
+}
+
+footer .icons a{
+  background-color: #fff;
+}
+
+footer .icons svg g {
+  fill: #003049;
+}
