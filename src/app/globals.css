@@ -14,6 +14,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background-rgb);
   color: var(--foreground-rgb);
@@ -42,4 +46,9 @@ footer .icons a{
 
 footer .icons svg g {
   fill: #003049;
+}
+
+.navbar-scroll {
+  mix-blend-mode: difference;
+  transition: background-color 0.3s, color 0.3s;
 }
