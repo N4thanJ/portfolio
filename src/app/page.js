@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from 'react';
+import { React, useState } from 'react';
 import Link from 'next/link';
 import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconDeviceMobileCode, IconSearch, IconDownload } from '@tabler/icons-react';
 
-export default function Home() {
+function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleClick() {
@@ -12,9 +12,9 @@ export default function Home() {
   }
 
   function scrollToSection(event, targetId) {
-    event.preventDefault();
+    event.preventDefault()
 
-    const targetElement = document.querySelector(targetId);
+    const targetElement = document.querySelector(targetId)
     const offset = 80;
 
     window.scrollTo({
@@ -22,7 +22,30 @@ export default function Home() {
       behavior: 'smooth'
     });
 
-    setIsMenuOpen(false);
+    setIsMenuOpen(false)
+  }
+
+  const onSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+
+    formData.append("access_key", "c4bd49cf-9c87-47c6-b467-0e8fa3dc8743")
+
+    const object = Object.fromEntries(formData)
+    const json = JSON.stringify(object)
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json())
+
+    if (res.success) {
+      console.log("Success", res)
+    }
   }
 
   return (  
@@ -34,7 +57,7 @@ export default function Home() {
           <li><Link href="#" onClick={(e) => scrollToSection(e, '#about')}>About</Link></li>
           <li><Link href="#" onClick={(e) => scrollToSection(e, '#skills')}>Skills</Link></li>
           <li><Link href="#" onClick={(e) => scrollToSection(e, '#')}>Work</Link></li>
-          <li><Link href="#" onClick={(e) => scrollToSection(e, '#')}>Contact</Link></li>
+          <li><Link href="#" onClick={(e) => scrollToSection(e, '#contact')}>Contact</Link></li>
         </ul>
         <div className="md:hidden">
           <button onClick={handleClick} className="flex flex-col justify-around w-9 h-9 bg-transparent border-none cursor-pointer">
@@ -52,7 +75,7 @@ export default function Home() {
               <li><Link href="#" className="block w-full py-4" onClick={(e) => scrollToSection(e, '#about')}>About</Link></li>
               <li><Link href="#" className="block w-full py-4" onClick={(e) => scrollToSection(e, '#skills')}>Skills</Link></li>
               <li><Link href="#" className="block w-full py-4" onClick={(e) => scrollToSection(e, '#')}>Work</Link></li>
-              <li><Link href="#" className="block w-full py-4" onClick={(e) => scrollToSection(e, '#')}>Contact</Link></li>
+              <li><Link href="#" className="block w-full py-4" onClick={(e) => scrollToSection(e, '#contact')}>Contact</Link></li>
           </ul>
       </nav>    
       )}
@@ -137,6 +160,36 @@ export default function Home() {
           </article>
         </section>
         {/* Work */}
+        <section className="odd:bg-primary even:bg-secondary">
+          
+        </section>
+        {/* Contact */}
+        <section className="odd:bg-primary even:bg-secondary flex justify-center items-center py-10" id="contact">
+        <div className="w-full lg:mx-80 mx-5 bg-primary">
+          <h1 className="uppercase font-black pb-10 text-3xl text-center text-secondary tracking-widest">Contact</h1>
+          <form onSubmit={onSubmit} method="POST" className="flex flex-col">
+            <div className="flex justify-between gap-0 flex-col 2xl:gap-8 2xl:flex-row">
+              <div className="flex flex-col w-full">
+                <label htmlFor="name">Name</label>
+                <input type="text" name="name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your name..."/>
+              </div>
+
+              <div className="flex flex-col w-full">
+                <label htmlFor="name">Name</label>
+                <input type="text" name="name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your name..."/>
+              </div>
+            </div>
+
+            <label htmlFor="email">Email</label>
+            <input type="text" name="email" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your email..."/>
+            
+            <label htmlFor="message">Message</label>
+            <textarea name="message" required className="valid:border-green invalid:border-red focus:outline-none mb-10 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black h-28" placeholder="Enter your message..."></textarea>
+
+            <button type="submit" className="border-secondary border-4 text-secondary hover:bg-secondary hover:text-white py-2 font-extrabold rounded-full w-full lg:w-1/4 m-auto transition-all">Submit</button>
+          </form>
+        </div>
+      </section>
       </main>
       <footer>
         <article className="flex flex-col items-center gap-5 py-10 bg-secondary">
@@ -168,7 +221,7 @@ export default function Home() {
                   <li><Link href="#" onClick={(e) => scrollToSection(e, '#about')}>About</Link></li>
                   <li><Link href="#" onClick={(e) => scrollToSection(e, '#skills')}>Skills</Link></li>
                   <li><Link href="#" onClick={(e) => scrollToSection(e, '#')}>Work</Link></li>
-                  <li><Link href="#" onClick={(e) => scrollToSection(e, '#')}>Contact</Link></li>
+                  <li><Link href="#" onClick={(e) => scrollToSection(e, '#contact')}>Contact</Link></li>
                 </ul>
             </nav>
         </article>
@@ -176,3 +229,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home

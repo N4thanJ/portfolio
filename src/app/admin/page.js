@@ -1,27 +1,6 @@
 "use client"
 
-import { useState } from 'react';
-
 export default function Home() {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // function handleClick() {
-  //   setIsMenuOpen(!isMenuOpen)
-  // }
-
-  // function scrollToSection(event, targetId) {
-  //   event.preventDefault();
-
-  //   const targetElement = document.querySelector(targetId);
-  //   const offset = 80;
-
-  //   window.scrollTo({
-  //     top: targetElement.offsetTop - offset,
-  //     behavior: 'smooth'
-  //   });
-
-  //   setIsMenuOpen(false);
-  // }
 
   return (  
     <>
