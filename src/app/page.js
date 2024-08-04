@@ -170,13 +170,13 @@ function Home() {
           <form onSubmit={onSubmit} method="POST" className="flex flex-col">
             <div className="flex justify-between gap-0 flex-col 2xl:gap-8 2xl:flex-row">
               <div className="flex flex-col w-full">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your name..."/>
+                <label htmlFor="first-name">First Name</label>
+                <input type="text" name="first-name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your first name..."/>
               </div>
 
               <div className="flex flex-col w-full">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your name..."/>
+                <label htmlFor="last-name">Last Name</label>
+                <input type="text" name="last-name" required className="valid:border-green invalid:border-red focus:outline-none mb-4 mt-1 border-l-4 py-2 px-3 bg-lightgray text-black" placeholder="Enter your last name..."/>
               </div>
             </div>
 
